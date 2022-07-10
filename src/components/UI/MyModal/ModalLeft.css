@@ -1,0 +1,58 @@
+.sleva {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+
+}
+
+.sleva.active {
+
+    opacity: 1;
+    pointer-events: all;
+}
+
+.sleva__content {
+    height: 100vh;
+    padding: 20px;
+    border-radius: 12px;
+    justify-content: center;
+    background-color: white;
+    /* height: 500px;
+    width: 400px; */
+    transform: scale(0.5);
+    transition: 0.7s all;
+    width: 20vw;
+    width: max;
+
+}
+
+.sleva__content.active {
+    /* height: 60vh; */
+    height: 100%;
+    animation: show-loader .5s, forwards;
+    transform: scale(1);
+}
+
+@keyframes show-loader {
+    0% {
+        opacity: 0;
+        transform: translateX(-200px)
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
